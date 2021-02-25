@@ -7,9 +7,7 @@ import { UserRepository } from '../repositories/UserRepository';
 class UserController {
   async create(req: Request, res: Response) {
     const { name, email } = req.body;
-
     const usersRepository = getCustomRepository(UserRepository);
-
     const userExists = await usersRepository.findOne({ email });
 
     if(userExists) {
