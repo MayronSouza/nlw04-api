@@ -18,7 +18,7 @@ class UserController {
 
     await usersRepository.save(user);
 
-    delete user.id;
+    // delete user.id;
 
     return res.status(201).json(user);
   }
